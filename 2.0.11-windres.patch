@@ -1,0 +1,16 @@
+--- origsrc/SDL_ttf-2.0.11/configure.in	2012-01-14 22:44:08.000000000 -0600
++++ src/SDL_ttf-2.0.11/configure.in	2013-11-24 18:03:02.127645800 -0600
+@@ -49,12 +49,7 @@ AC_PROG_LIBTOOL
+ AC_PROG_CC
+ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
+-if test -z "$host_alias"; then
+-    hostaliaswindres=
+-else
+-    hostaliaswindres="$host_alias-windres"
+-fi
+-AC_CHECK_PROGS(WINDRES, [windres $hostaliaswindres $host_os-windres])
++AC_CHECK_TOOL(WINDRES, windres)
+ 
+ case "$host" in
+     *-*-cygwin* | *-*-mingw32*)
